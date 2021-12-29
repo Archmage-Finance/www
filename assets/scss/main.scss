@@ -178,6 +178,17 @@ body {
     }
 }
 
+.button.is-primary.is-outlined {
+    color: hsl(269, 100%, 85%);
+    border-color: hsl(269, 100%, 85%);
+}
+
+.button.is-primary.is-outlined:hover {
+    background-color: hsl(269, 100%, 85%);
+    border-color: hsl(269, 100%, 85%);
+    color: #fff;
+}
+
 .post-content {
     padding-top: 60px;
     padding-bottom: 60px;
