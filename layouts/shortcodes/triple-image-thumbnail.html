@@ -1,0 +1,42 @@
+{{ $originalImage1 := .Page.Resources.GetMatch (.Get 0) }}
+{{ $originalImage2 := .Page.Resources.GetMatch (.Get 1) }}
+{{ $originalImage3 := .Page.Resources.GetMatch (.Get 2) }}
+
+{{ $imageWidth1 := string ( $originalImage1.Width ) }}
+{{ if gt $originalImage1.Width 1280 }}
+{{ $imageWidth1 = "1280" }}
+{{ end }}
+
+{{ $imageWidth1 := ("300x300 Smart Lanczos q100") }}
+{{ .Scratch.Set "image1" ($originalImage1.Fill $imageWidth1) }}
+{{ $image1 := .Scratch.Get "image1" }}
+
+{{ $imageWidth2 := string ( $originalImage2.Width ) }}
+{{ if gt $originalImage2.Width 1280 }}
+{{ $imageWidth2 = "1280" }}
+{{ end }}
+
+{{ $imageWidth2 := ("300x300 Smart Lanczos q100") }}
+{{ .Scratch.Set "image2" ($originalImage2.Fill $imageWidth2) }}
+{{ $image2 := .Scratch.Get "image2" }}
+
+{{ $imageWidth3 := string ( $originalImage3.Width ) }}
+{{ if gt $originalImage3.Width 1280 }}
+{{ $imageWidth3 = "1280" }}
+{{ end }}
+
+{{ $imageWidth3 := ("300x300 Smart Lanczos q100") }}
+{{ .Scratch.Set "image3" ($originalImage3.Fill $imageWidth3) }}
+{{ $image3 := .Scratch.Get "image3" }}
+
+<div class="columns triple-image">
+    <div class="column">
+        <a href="{{ $originalImage1.RelPermalink }}" target="_blank"><img src="{{ $image1.RelPermalink }}" width="{{ $image1.Width }}" height="{{ $image1.Height }}"></a>
+    </div>
+    <div class="column">
+        <a href="{{ $originalImage2.RelPermalink }}" target="_blank"><img src="{{ $image2.RelPermalink }}" width="{{ $image2.Width }}" height="{{ $image2.Height }}"></a>
+    </div>
+    <div class="column">
+        <a href="{{ $originalImage3.RelPermalink }}" target="_blank"><img src="{{ $image3.RelPermalink }}" width="{{ $image3.Width }}" height="{{ $image3.Height }}"></a>
+    </div>
+</div>

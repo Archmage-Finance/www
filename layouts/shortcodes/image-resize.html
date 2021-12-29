@@ -1,0 +1,13 @@
+{{ $original := .Page.Resources.GetMatch (.Get 0) }}
+
+
+
+{{ $imageWidth := string ( $original.Width ) }}
+{{ if gt $original.Width 1280 }}
+{{ $imageWidth = "1280" }}
+{{ end }}
+
+{{ $imageWidth := (printf "%sx Lanczos q100" ($imageWidth)) }}
+{{ .Scratch.Set "image" ($original.Resize $imageWidth) }}
+{{ $image := .Scratch.Get "image" }}
+<a href="{{ $original.RelPermalink }}" target="_blank"><img src="{{ $image.RelPermalink }}" width="{{ $image.Width }}" height="{{ $image.Height }}"></a>

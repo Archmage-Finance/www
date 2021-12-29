@@ -1,0 +1,15 @@
+baseURL = "https://www.archmage.fi/"
+languageCode = "en-us"
+title = "Archmage"
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[languages]
+  [languages.en]
+    title = "Archmage"
+    languageName = "English"
+    weight = 1
