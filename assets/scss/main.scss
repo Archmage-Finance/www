@@ -189,6 +189,10 @@ body {
     color: #fff;
 }
 
+a.navbar-item:focus {
+    color: hsl(269, 100%, 85%);
+}
+
 .post-content {
     padding-top: 60px;
     padding-bottom: 60px;
